@@ -7,8 +7,8 @@ import {
 export const uploadRoute = () => {
   const router = Router();
 
-  router.post('/', createUploadController);
-  router.get('/', getAllUploadsController);
+  router.post('/uploads', createUploadController);
+  router.get('/uploads', getAllUploadsController);
   // router.get('/:id', LeadController.getOne);
   return router;
 };

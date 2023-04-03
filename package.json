@@ -5,7 +5,7 @@
   "author": "webslava92",
   "description": "cra-electron",
   "homepage": "./",
-  "main": "public/electron.js",
+  "main": "dist/electron.js",
   "dependencies": {
     "@date-io/dayjs": "^2.16.0",
     "@electron/remote": "^2.0.9",

@@ -95,7 +95,7 @@ export async function handleResult<T = any>(
   }
 }
 
-const baseURL = 'http://localhost:5000';
+const baseURL = 'http://localhost:5000/api';
 
 export const httpClient = axios.create({
   baseURL,

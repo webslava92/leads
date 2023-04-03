@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable global-require */
 import { app, BrowserWindow, ipcMain } from 'electron';
-import remote from '@electron/remote/main';
+// import remote from '@electron/remote/main';
 import path from 'path';
 import isDev from 'electron-is-dev';
 import electronReload from 'electron-reload';
@@ -9,7 +9,7 @@ import electronReload from 'electron-reload';
 let win: any;
 const ipc = ipcMain;
 
-remote.initialize();
+// remote.initialize();
 
 
 if (isDev) {

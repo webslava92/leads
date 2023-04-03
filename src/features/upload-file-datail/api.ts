@@ -22,7 +22,7 @@ export async function uploadFiles(file: string | Blob, onUploadProgress: any) {
 
 export async function getData() {
   const result = await httpClient.get<HttpResponse<ItemsGroup>>(
-    '/users',
+    '/leads',
     {}
   );
   if (result.data.status !== 200) {

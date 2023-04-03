@@ -12,7 +12,7 @@ export const createLeadController = async (req: Request, res: Response) => {
   return res.json(lead);
 };
 
-export const getAllLeadsController = async () => {
+export const getAllLeadsController = async (req: Request, res: Response) => {
   const leads = await getAllLeadsService();
-  return leads;
+  return res.json(leads);
 };
