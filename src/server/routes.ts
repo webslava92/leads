@@ -4,7 +4,7 @@ import { uploadRoute } from './upload/upload.route';
 
 const router = Router();
 
-router.post('/leads', leadRoute());
-router.get('/uploads', uploadRoute());
+router.use('/leads', leadRoute());
+router.use('/uploads', uploadRoute());
 
 export default router;

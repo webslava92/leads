@@ -15,16 +15,16 @@ import {
 })
 export class UploadModel extends Model {
   @CreatedAt
-    creationDate?: Date;
+    creationDate!: Date;
 
   @UpdatedAt
-    updatedOn?: Date;
+    updatedOn!: Date;
 
   @PrimaryKey
   @AutoIncrement
   @Column({ type: DataTypes.INTEGER, allowNull: false })
-    id?: number;
+    id!: number;
 
   @Column({ type: DataTypes.INTEGER, allowNull: false })
-    numberOfEntries?: number;
+    numberOfEntries!: number;
 }

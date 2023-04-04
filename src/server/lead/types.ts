@@ -3,4 +3,5 @@ export type DataType = {
   lastName: string;
   phone: string;
   email: string;
+  uploadId?: number;
 };

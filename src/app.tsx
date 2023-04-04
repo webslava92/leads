@@ -3,7 +3,7 @@ import { Box, Paper, useTheme } from '@mui/material';
 import { FilesViewer } from '@features/files-viewer/files-viewer';
 import { TopBar } from '@features/top-bar/top-bar';
 import './App.css';
-import { getData, getUploads } from '@features/upload-file-datail/api';
+import { getLeads, getUploads } from '@features/upload-file-datail/api';
 import { UploadFileDetail } from '@features/upload-file-datail';
 import { UploadsViewer } from '@features/uploads-viewer/uploads-viewer';
 
@@ -12,7 +12,7 @@ export function App() {
   const [uploads, setUploads] = useState<any>([]);
 
   useEffect(() => {
-    getData().then((i) => setItems(i));
+    getLeads().then((i) => setItems(i));
     getUploads().then((i) => setUploads(i));
   }, []);
 
@@ -21,9 +21,10 @@ export function App() {
     app: {
       position: 'relative',
       width: '100%',
-      minHeight: '100%',
+      minHeight: '100vh',
       backgroundColor: '#eeeeee',
       padding: 2,
+      boxSizing: 'border-box',
     },
     appInner: {
       paddingTop: '30px',

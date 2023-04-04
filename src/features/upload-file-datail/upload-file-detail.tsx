@@ -10,7 +10,7 @@ import {
 } from '@mui/material';
 import React, { useState } from 'react';
 import { FileType, UploadFileProps } from './types';
-import { getData, uploadFiles, getUploads } from './api';
+import { getLeads, uploadFiles, getUploads } from './api';
 
 export function UploadFileDetail({ setItems, setUploads }: UploadFileProps) {
   const [currentFile, setCurrentFile] = useState<any>(undefined);
@@ -36,7 +36,7 @@ export function UploadFileDetail({ setItems, setUploads }: UploadFileProps) {
       }
     )
       .then(() => {
-        getData().then((i) => setItems(i));
+        getLeads().then((i) => setItems(i));
         getUploads().then((u) => setUploads(u));
         setCurrentFile(undefined);
         setMessage(undefined);
@@ -49,9 +49,6 @@ export function UploadFileDetail({ setItems, setUploads }: UploadFileProps) {
         setIsError(true);
       });
   };
-
-  console.log('currentFile', currentFile);
-
 
   const styles = {
     wrapper: {},
@@ -85,7 +82,7 @@ export function UploadFileDetail({ setItems, setUploads }: UploadFileProps) {
             <label htmlFor='btn-upload'>
               <input
                 id='btn-upload'
-                name='btn-upload'
+                name='file'
                 style={{ display: 'none' }}
                 type='file'
                 accept='.csv'

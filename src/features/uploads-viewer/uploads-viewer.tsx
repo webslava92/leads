@@ -13,8 +13,8 @@ import {
 
 type Row = {
   id: number;
-  created_at: string;
-  number_of_entries: number;
+  creationDate: string;
+  numberOfEntries: number;
 };
 
 type Props = {
@@ -31,8 +31,8 @@ type Column = {
 
 const columns: readonly Column[] = [
   { id: 'id', label: 'Id' },
-  { id: 'create_at', label: 'Create date' },
-  { id: 'numbers_of_entries', label: 'Number of entries' },
+  { id: 'creationDate', label: 'Create date' },
+  { id: 'numbersOfEntries', label: 'Entries' },
 ];
 
 export function UploadsViewer({
@@ -76,15 +76,15 @@ export function UploadsViewer({
               </TableRow>
             </TableHead>
             <TableBody>
-              {items.map((row: Row) => (
+              {items && items.map((row: Row) => (
                 <TableRow
                   onContextMenu={() => handleContextMenu(row)}
                   sx={{ cursor: row.id ? 'pointer' : 'unset' }}
                   key={row.id}
                 >
                   <TableCell>{row.id}</TableCell>
-                  <TableCell>{row.created_at}</TableCell>
-                  <TableCell>{row.number_of_entries}</TableCell>
+                  <TableCell>{row.creationDate}</TableCell>
+                  <TableCell>{row.numberOfEntries}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

@@ -1,3 +1,7 @@
 export type DataType = {
-  numberOfEntries: number
+  firstName: string;
+  lastName: string;
+  phone: string;
+  email: string;
+  uploadId?: number;
 };

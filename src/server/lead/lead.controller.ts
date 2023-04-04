@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { createLeadService, getAllLeadsService } from './lead.service';
 
-export const createLeadController = async (req: Request, res: Response) => {
+export async function createLeadController(req: Request, res: Response) {
   const { firstName, lastName, phone, email } = req.body;
   const lead = await createLeadService({
     firstName,
@@ -9,10 +9,10 @@ export const createLeadController = async (req: Request, res: Response) => {
     phone,
     email,
   });
-  return res.json(lead);
-};
+  return res.json({ status: 200, data: lead });
+}
 
-export const getAllLeadsController = async (req: Request, res: Response) => {
+export async function getAllLeadsController(req: Request, res: Response) {
   const leads = await getAllLeadsService();
-  return res.json(leads);
-};
+  return res.json({ status: 200, data: leads });
+}

@@ -1,4 +1,4 @@
-id,first_name,last_name,phone,email,upload_id
+id,firstName,lastName,phone,email,uploadId
 4,Test_name_4,Test_last_name_4,+79780000004,test_email_4@gmail.com,1
 5,Test_name_5,Test_last_name_5,+79780000005,test_email_5@gmail.com,1
 6,Test_name_6,Test_last_name_6,+79780000006,test_email_6@gmail.com,1

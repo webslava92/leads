@@ -31,9 +31,13 @@ export class LeadModel extends Model {
   @Column({ type: DataTypes.TEXT, allowNull: false })
     lastName!: string;
 
-  @Column({ type: DataTypes.TEXT, allowNull: false })
+  @Column({ type: DataTypes.TEXT, allowNull: false, unique: true })
     phone!: string;
 
-  @Column({ type: DataTypes.TEXT, allowNull: false })
+
+  @Column({ type: DataTypes.TEXT, allowNull: false, unique: true })
     email!: string;
+
+  @Column({ type: DataTypes.INTEGER })
+    uploadId!: number;
 }

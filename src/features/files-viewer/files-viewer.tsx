@@ -13,10 +13,11 @@ import {
 
 type Row = {
   id: number;
-  first_name: string;
-  last_name: string;
+  firstName: string;
+  lastName: string;
   phone: string;
   email: string;
+  creationDate: string;
 };
 
 type Props = {
@@ -33,10 +34,11 @@ type Column = {
 
 const columns: readonly Column[] = [
   { id: 'id', label: 'Id', align: 'center' },
-  { id: 'first_name', label: 'First name', align: 'center' },
-  { id: 'last_name', label: 'Last name' },
+  { id: 'firstName', label: 'First name', align: 'center' },
+  { id: 'lastName', label: 'Last name' },
   { id: 'phone', label: 'Phone' },
   { id: 'email', label: 'Email' },
+  { id: 'creationDate', label: 'Create date' },
 ];
 
 export function FilesViewer({
@@ -58,6 +60,8 @@ Props) {
       backgroundColor: '#ccc',
     },
   };
+
+  console.log('items', items);
 
   const handleContextMenu = (row: any) => {
     console.log('row', row.id);
@@ -81,19 +85,21 @@ Props) {
               </TableRow>
             </TableHead>
             <TableBody>
-              {items.map((row: Row) => (
-                <TableRow
-                  onContextMenu={() => handleContextMenu(row)}
-                  sx={{ cursor: row.id ? 'pointer' : 'unset' }}
-                  key={row.id}
-                >
-                  <TableCell>{row.id}</TableCell>
-                  <TableCell>{row.first_name}</TableCell>
-                  <TableCell>{row.last_name}</TableCell>
-                  <TableCell>{row.phone}</TableCell>
-                  <TableCell>{row.email}</TableCell>
-                </TableRow>
-              ))}
+              {items &&
+                items.map((row: Row) => (
+                  <TableRow
+                    onContextMenu={() => handleContextMenu(row)}
+                    sx={{ cursor: row.id ? 'pointer' : 'unset' }}
+                    key={row.id}
+                  >
+                    <TableCell>{row.id}</TableCell>
+                    <TableCell>{row.firstName}</TableCell>
+                    <TableCell>{row.lastName}</TableCell>
+                    <TableCell>{row.phone}</TableCell>
+                    <TableCell>{row.email}</TableCell>
+                    <TableCell>{row.creationDate}</TableCell>
+                  </TableRow>
+                ))}
             </TableBody>
           </Table>
         </TableContainer>
