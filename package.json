@@ -115,7 +115,7 @@
     "lint": "eslint . --ext ts --ext tsx --ext js",
     "tsc:watch": "tsc -w",
     "server:dev": "concurrently -k \"tsc -w\" \"nodemon --inspect dist/server/index.js\"",
-    "electron:serve": "concurrently -k \"cross-env BROWSER=none yarn start\" \"yarn electron:start\"",
+    "electron:dev": "concurrently -k \"cross-env BROWSER=none yarn start\" \"yarn electron:start\"",
     "electron:build": "yarn build && electron-builder -c.extraMetadata.main=build/electron.js",
     "electron:start": "wait-on tcp:127.0.0.1:3000 && electron ."
   },
