@@ -31,11 +31,11 @@ export class LeadModel extends Model {
   @Column({ type: DataTypes.TEXT, allowNull: false })
     lastName!: string;
 
-  @Column({ type: DataTypes.TEXT, allowNull: false, unique: true })
+  @Column({ type: DataTypes.TEXT, allowNull: false })
     phone!: string;
 
 
-  @Column({ type: DataTypes.TEXT, allowNull: false, unique: true })
+  @Column({ type: DataTypes.TEXT, allowNull: false })
     email!: string;
 
   @Column({ type: DataTypes.INTEGER })
